@@ -34,8 +34,11 @@ def redirect_to(short_url):
         return("<h1>Invalid short URL</h1>")
     link.views += 1
     db.session.commit()
-
-    return redirect(link.original_url)
+    if link.original_url.startswith("http"):
+        redirect_url = link.original_url
+    else:
+        redirect_url = "http://"+link.original_url
+    return redirect(redirect_url)
 
 
 @short.route('/<short_url>/stats')
@@ -43,6 +46,7 @@ def total_views(short_url):
     link = Link.query.filter_by(shorten_url=short_url).first()
     if link == None:
         return Response("Invalid short URL", 404)
+
     response = json.dumps(
         {
             "original": link.original_url,
