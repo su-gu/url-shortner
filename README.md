@@ -33,7 +33,7 @@ Otherwise, refer to the [documentation](https://pipenv.pypa.io/en/latest/#instal
 
 ***Start the flask server***
 
-    flask run  
+    cd shortner && flask run  
     
 ------------
 
