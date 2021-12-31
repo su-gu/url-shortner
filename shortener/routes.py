@@ -26,6 +26,13 @@ def add_link():
 
     return Response(response, 201)
 
+@short.route('/')
+def ping():
+    response = json.dumps({
+        "message": "Success!!"
+    })
+
+    return Response(response, 200)
 
 @short.route('/<short_url>')
 def redirect_to(short_url):
