@@ -5,7 +5,7 @@ from models import Link
 from generate_unique import generate_unique
 import json
 
-BASE_URL = "http://localhost:5000/"
+BASE_URL = "https://urlshorter-336810.as.r.appspot.com"
 short = Blueprint('short', __name__)
 
 @short.route('/add_link', methods=['POST'])
