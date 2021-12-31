@@ -5,8 +5,12 @@ from models import Link
 from generate_unique import generate_unique
 import json
 
-BASE_URL = "https://urlshorter-336810.as.r.appspot.com"
+BASE_URL = "https://dashboard.heroku.com/"
 short = Blueprint('short', __name__)
+
+@short.route('/', methods=['GET'])
+def index():
+    return Response("<img src='https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/home/knowledge-center/connecting-with-a-partner/find-a-partner-tool/ping-works-logo.jpg'/>")
 
 @short.route('/add_link', methods=['POST'])
 def add_link():
