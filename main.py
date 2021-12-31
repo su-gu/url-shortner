@@ -9,7 +9,8 @@ def create_app(config_file='settings.py'):
     app.config.from_pyfile(config_file)
     db.init_app(app)
     app.register_blueprint(short)
-    return app
+    # app.run(port=54268)
+    return app 
 
 
 if (__name__ == "__main__"):
