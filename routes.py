@@ -5,7 +5,7 @@ from models import Link
 from generate_unique import generate_unique
 import json
 
-BASE_URL = "https://dashboard.heroku.com/"
+BASE_URL = "https://clip-url.herokuapp.com/"
 short = Blueprint('short', __name__)
 
 @short.route('/', methods=['GET'])
