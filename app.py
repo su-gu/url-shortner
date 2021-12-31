@@ -1,4 +1,4 @@
-from flask import Flask, app
+from flask import Flask
 from database_init import db
 from routes import short
 
